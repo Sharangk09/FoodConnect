@@ -1,0 +1,1 @@
+export default {content:['./index.html','./src/**/*.{js,jsx}'],theme:{extend:{colors:{leaf:{50:'#f1f8ec',100:'#dff0d3',500:'#4a9d3f',600:'#3a8232',700:'#2d6628',900:'#17361a'},peach:{50:'#fff6ee',100:'#ffe8d1',400:'#f6a45b',500:'#ee8a36'}},fontFamily:{sans:['"Plus Jakarta Sans"','system-ui','sans-serif']}}}}

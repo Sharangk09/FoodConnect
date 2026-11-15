@@ -1,0 +1,6 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{@apply bg-white text-leaf-900 antialiased}
+.inp{@apply w-full rounded-lg border border-leaf-100 bg-white px-3 py-2 text-sm outline-none focus:border-leaf-500 focus:ring-2 focus:ring-leaf-100}
+.btn{@apply inline-flex items-center justify-center gap-2 rounded-lg bg-leaf-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-leaf-700 disabled:opacity-50}
+.btn2{@apply inline-flex items-center justify-center gap-2 rounded-lg border border-leaf-100 bg-white px-3 py-2 text-sm font-semibold text-leaf-700 hover:bg-leaf-50}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

@@ -1,0 +1,6 @@
+const m=require('mongoose'),S=m.Schema,ref=n=>({type:S.Types.ObjectId,ref:n,required:true});
+const User=m.model('User',new S({name:String,organizationName:{type:String,required:true},email:{type:String,required:true,unique:true,lowercase:true},phone:String,password:{type:String,required:true},role:{type:String,enum:['restaurant','ngo','admin']},address:String,city:String},{timestamps:true}));
+const Listing=m.model('FoodListing',new S({restaurantId:ref('User'),foodName:{type:String,required:true},category:String,quantity:{type:Number,min:0},unit:String,description:String,preparationDate:Date,expiryDate:Date,pickupAddress:String,pickupTime:String,instructions:String,image:String,status:{type:String,enum:['available','unavailable','claimed'],default:'available'}},{timestamps:true}));
+const Request=m.model('FoodRequest',new S({ngoId:ref('User'),restaurantId:ref('User'),foodListingId:ref('FoodListing'),requestedQuantity:Number,beneficiaries:Number,pickupDate:Date,contactPerson:String,contactNumber:String,message:String,status:{type:String,enum:['pending','approved','rejected','ready','completed','cancelled'],default:'pending'}},{timestamps:true}));
+const Notif=m.model('Notification',new S({recipientId:ref('User'),title:String,message:String,type:String,isRead:{type:Boolean,default:false}},{timestamps:true}));
+module.exports={User,Listing,Request,Notif};
